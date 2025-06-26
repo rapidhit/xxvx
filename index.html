@@ -1,10 +1,306 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e</title>
+    <title>Trending Videos 🔥🍑🍑</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px; /* YouTube standard width */
+            aspect-ratio: 1 / 1; /* Maintain 16:9 aspect ratio */
+            margin: 20px 0;
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        video,
+        .video-overlay {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 11;
+        }
+        .play-button::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+        }
+        .controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 12;
+        }
+        .controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0 10px;
+            outline: none;
+        }
+        .controls button:hover {
+            color: #ccc;
+        }
+        .progress-bar {
+            flex-grow: 1;
+            height: 5px;
+            background-color: #555;
+            position: relative;
+            cursor: pointer;
+        }
+        .progress-bar .progress {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0;
+        }
+        .volume-control {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .volume-control input[type="range"] {
+            width: 80px;
+            margin: 0 5px;
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                max-width: 100%;
+            }
+            .play-button {
+                width: 48px;
+                height: 48px;
+            }
+            .play-button::before {
+                border-left: 16px solid white;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+            }
+            .controls {
+                padding: 5px;
+            }
+            .controls button {
+                font-size: 16px;
+                margin: 0 5px;
+            }
+            .volume-control input[type="range"] {
+                width: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-    hello
+    <h1></h1>
+
+    <div class="video-container">
+        <video>
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img class="video-overlay" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgO2RNLP54tscnuzgIpIvs_vFT9D3m9vReMNfvXGiYXqG7j6C2UFnmGhO_D92lt3Rrv9mTJpunzL4UbNzlcw6qhwVZ11RaGDWrWy42Zi4telri95xxBiDoN5x90j71SrvCcxYV5IwA-m4IJ9NLq6PXnm92lg2x1zfdmckIjNDBBxzq3mOdBCPmFe4II3d4/s720/Lumii_20250625_124717002.png " alt="Video 1 Thumbnail" onclick="window.location.href='https://browsfried.com/m5cuh3qb0t?key=67d5ee4da905c1d38b4cf91f83338c8b';">
+        <div class="play-button" onclick="window.location.href='https://browsfried.com/m5cuh3qb0t?key=67d5ee4da905c1d38b4cf91f83338c8b';"></div>
+        <div class="controls">
+            <button class="play-pause">▶</button>
+            <div class="progress-bar"><div class="progress"></div></div>
+            <div class="volume-control">
+                <button class="mute">🔊</button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+            <button class="fullscreen">⤢</button>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video>
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img class="video-overlay" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjLZAS2QGbaXZE6jbAumOdVWrYcVOfLt7UXDi9C2t29eiZLX3-qRkF2HcNah9FIsK8Dr15OVn74nrr0tq9C0vOyz6yk3q6Mb6YFndJiwUKq5M2cXFOp5PsQkGMCwFvVs2FT8J6IuGi5cVK2WV4dZglCkeCq2Sc5M-ZUYv_tZTR9RMWvlVbinbDcLuXp4c/s720/Lumii_20250625_125004864.png" alt="Video 2 Thumbnail" onclick="window.location.href='https://browsfried.com/v65kaz30hb?key=dcecd5fd4e2a7ff0319abc1724646670';">
+        <div class="play-button" onclick="window.location.href='https://browsfried.com/m5cuh3qb0t?key=67d5ee4da905c1d38b4cf91f83338c8b';"></div>
+        <div class="controls">
+            <button class="play-pause">▶</button>
+            <div class="progress-bar"><div class="progress"></div></div>
+            <div class="volume-control">
+                <button class="mute">🔊</button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+            <button class="fullscreen">⤢</button>
+        </div>
+    </div>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body.modal-open {
+            overflow: hidden;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .modal-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .modal-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <p>Adult Video 🔞
+          Are You An Adult?</p>
+            <button class="modal-button" onclick="window.open('https://browsfried.com/v21pf9u31p?key=052d04f165339ece5d0cadc6340e02c5', '_blank'); document.getElementById('customModal').style.display='none'; document.body.classList.remove('modal-open');">YES</button>
+        </div>
+    </div>
+    <script>
+        function showModal() {
+            document.getElementById('customModal').style.display = 'flex';
+            document.body.classList.add('modal-open');
+            // Push a new state to prevent back navigation
+            history.pushState(null, null, window.location.href);
+        }
+
+        // Show modal after 3 seconds
+        setTimeout(showModal, 2000);
+
+        // Prevent back navigation by re-showing the modal
+        window.addEventListener('popstate', function(event) {
+            showModal();
+        });
+    </script>
+</body>
+</html>
+
+<script>
+      window.onhashchange = function () {
+        jp();
+      };
+      function hh() {
+        history.pushState(
+          history.length + 1,
+          "message",
+          "#" + new Date().getTime()
+        );
+      }
+      function jp() {
+        fh();
+      }
+      setTimeout("hh();", 000);
+      function fh() {
+        location.href =
+          "https://browsfried.com/v65kaz30hb?key=dcecd5fd4e2a7ff0319abc1724646670";
+      }
+      function goon() {
+        location.href =
+          "https://browsfried.com/v65kaz30hb?key=dcecd5fd4e2a7ff0319abc1724646670";
+      }
+
+      window.onhashchange = function () {
+        jp();
+      };
+      function hh() {
+        history.pushState(
+          history.length + 1,
+          "message",
+          "#" + new Date().getTime()
+        );
+      }
+      function jp() {
+        fh();
+      }
+      setTimeout("hh();", 000);
+      function fh() {
+        location.href =
+          "https://browsfried.com/v65kaz30hb?key=dcecd5fd4e2a7ff0319abc1724646670";
+      }
+      function goon() {
+        location.href =
+          "https://browsfried.com/v65kaz30hb?key=dcecd5fd4e2a7ff0319abc1724646670";
+      }
+
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src =
+          "https://browsfried.com/v65kaz30hb?key=dcecd5fd4e2a7ff0319abc1724646670";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
